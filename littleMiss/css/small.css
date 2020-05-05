@@ -11,6 +11,10 @@ body main {
     text-align: center;
     font-family: 'Dosis', sans-serif;
 }
+div h5 {
+    background-color:  #F3F9D2;
+    padding: 1em;
+}
 #form {
     display: grid;
     grid-template-columns: 1fr;
@@ -41,6 +45,20 @@ header {
 }
 .hidemenu {
     display: none;  
+}
+.inventory {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 2em;
+}
+.inventory div {
+    width: 300px;
+    margin: 2em 2em 2em 30%;
+    border: 2px solid #0a0903;
+    padding: 2em 2em 0em 2em;
+}
+.inventory div:hover {
+    box-shadow: #c0d684 10px 10px 20px;
 }
 main img {
     height: 200px;
@@ -74,6 +92,9 @@ ul {
     }
     .hidemenu {
         display: block;
+    }
+    .inventory {
+        grid-template-columns: 1fr 1fr;
     }
     ul {
         flex-direction: row;
