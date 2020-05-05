@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/small.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@600&family=Montez&display=swap" rel="stylesheet">
+    <title>Home</title>
+</head>
+
+<body>
+    <span id="heading">
+        <header>
+            <span><img src="images/logo.jpg" alt="Little Miss"></span>
+            <span>Contact Us</span>
+        </header>
+        <hr>
+        <nav>
+            <ul>
+                <li id = "hamburger">
+                    <a onclick = "hidemenu()">&equiv; Menu</a onclick = "hidemenu()">
+                </li>
+                <li>
+                    <a class="hidemenu" href="index.html">Home</a>
+                </li>
+                <li>
+                    <a class="hidemenu" href="order.html">Order</a>
+                </li>
+                <li>
+                    <a class="hidemenu" href="">Inventory</a>
+                </li>
+                <li>
+                    <a class="hidemenu" href="">Reviews and Gallery</a>
+                </li>
+            </ul>
+        </nav>
+    </span>
+
+    <main>
+        <h1 id="surveyheading">Order Here!</h1>
+        <form action="thanks.html" method="GET">
+            <article id="form">
+                <section>
+                    <span>
+                        <label for= "typeProduct">What product? ** <br> </label>
+                        <br>
+                    <input type="checkbox" id="type1" name="type1" value="topknot">
+                    <label for="type1"> Top Knot </label><br>
+                    <br>
+                    <input type="checkbox" id="type2" name="type2" value="bow">
+                    <label for="type2"> Bow </label><br>
+                    </span>
+                    <br><br>
+                        </section>
+            <section>
+            <span>
+                <label for="fullName">Full Name: </label>
+                <input type="text" id="fullName" name="fullName" required placeholder="John Doe"
+                    pattern="[A-Za-z ]{5,32}">
+            </span> <br><br>
+            <span>
+                <label for="email">Email: </label>
+                <input type="email" id="email" name="email" required placeholder="email@domain.com">
+            </span> <br><br>
+            <span>
+                <label for="phoneNumber">Phone number: </label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="2085550125">
+            </span> <br><br>
+            <span>
+                <label for="shipping"> Street address: </label>
+                <input type="text" id="shipping" name="shipping" required>
+            </span> <br><br>
+            <span>
+                <label for="shipping"> City: </label>
+                <input type="text" id="shipping" name="city" required>
+            </span> <br><br>
+            <span>
+                <label for="shipping"> State: </label>
+                <input type="text" id="shipping" name="state" required>
+            </span> <br><br>
+            <span>
+                <label for="shipping"> Zipcode: </label>
+                <input type="tel" id="shipping" name="zipcode" required>
+            </span> <br><br>
+            <!-- <span>
+                <label for="checkIn">Check-in Date: </label>
+                <input type="date" id="checkIn" name="checkIn" placeholder="mm/dd/yyyy">
+            </span> <br>
+            <span>
+                <label for="checkOut">Check-out Date: </label>
+                <input type="date" id="checkOut" name="checkOut" placeholder="mm/dd/yyyy">
+            </span> <br> -->
+            <!-- <span>
+                <label for="howmany">How many?</label>
+                <select name="location" id="location">
+                    <option value="" selected disabled>Select...</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </span> <br> <br> -->
+        </section>
+                <section>
+                    <span>
+                        <label for="typeProduct">If you chose bow...</label> <br><br>
+                        What print?<br>
+                        <textarea name="additionalComments" id="additionalComments" cols="15" rows="2"></textarea><br>
+                        What size?
+                        <label for="thick">
+                            <input type="checkbox" value="thick" name="typeProduct" id="thick">
+                            Thick
+                        </label>
+                        <label for="skinny">
+                            <input type="checkbox" value="skinny" name="typeProduct" id="skinny">
+                            Skinny
+                        </label> <br><br>
+                        What type?
+                        <label for="nylonheadband">
+                            <input type="checkbox" value="nylonheadband" name="typeProduct" id="nylonheadband">
+                            Nylon Head Band
+                        </label>
+                        <label for="aligatorclip">
+                            <input type="checkbox" value="aligatorclip" name="typeProduct" id="aligatorclip">
+                            Aligator Clip
+                        </label> <br><br><br>
+                <span>
+                    <label for="additionalComments">If you chose top knot...</label> <br><br>
+                    What print? <br>
+                    <textarea name="additionalComments" id="additionalComments" cols="15" rows="2"></textarea> <br><br>
+                    What size? <br>
+                    <label for="smallest">
+                        <input type="radio" value="thick" name="typeProduct" id="thick">
+                        0-6 months
+                    </label>
+                    <label for="small">
+                        <input type="radio" value="skinny" name="typeProduct" id="skinny">
+                        6-12 months
+                    </label>
+                    <label for="medium">
+                        <input type="radio" value="skinny" name="typeProduct" id="skinny">
+                        1-3 years
+                    </label>
+                    <label for="large">
+                        <input type="radio" value="skinny" name="typeProduct" id="skinny">
+                        4 years +
+                    </label>
+                </span><br>
+            </span> <br>
+        </section>
+    </article>
+    <br><br>
+    <span>
+        <label for="additionalComments">Type any additional instructions here:</label> <br>
+        <textarea name="additionalComments" id="additionalComments" cols="30" rows="3"></textarea>
+    </span><br>
+    <span>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Clear">
+    </span> <br><br>
+            *each product is $4 <br>
+            *shipping is $4 unless your order is over $25
+        </form>
+    </main>
+
+    <footer>
+        All rights reserved | Little Miss | Copyright 2020
+    </footer>
+</body>
+<script src="script/main.js"></script>
+</html>
