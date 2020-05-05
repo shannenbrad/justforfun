@@ -4,7 +4,7 @@ const port = 8080
 
 
 
-app.use(express.static('.'))
+app.use(express.static('littleMiss'))
 app.use(express.urlencoded())
 
 app.post('/order-submit', (req, res) => {

@@ -1,3 +1,7 @@
+a {
+    text-decoration: none;
+    color: #0a0903;
+}
 body {
     /* background-color: #eff1ed; */
     font-family: 'Montez', cursive;
@@ -22,7 +26,7 @@ footer {
     text-align: center;
 }
 header img {
-    max-width: 125px;
+    width: 125px;
     margin-right: 80%;
     padding: 1em;
 }
@@ -38,6 +42,10 @@ header {
 .hidemenu {
     display: none;  
 }
+main img {
+    height: 200px;
+    margin: 0.5em;
+}
 nav {
     display: block;
     background-color: #CEEBBF;
@@ -48,6 +56,9 @@ li a {
     color: #0a0903;
     font-size: 24px;
 }
+#reviews {
+    margin-top: 2em;
+}
 ul {
     list-style-type: none;
     display: flex;
@@ -57,6 +68,12 @@ ul {
 @media only screen and (min-width: 32.5em) {
     body #form {
        grid-template-columns: 1fr 1fr 1fr;
+    }
+    #hamburger {
+        display: none;
+    }
+    .hidemenu {
+        display: block;
     }
     ul {
         flex-direction: row;
