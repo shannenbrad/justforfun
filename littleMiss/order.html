@@ -12,7 +12,7 @@
 <body>
     <span id="heading">
         <header>
-            <span><img src="images/logo.jpg" alt="Little Miss"></span>
+            <img src="images/logo.jpg" alt="Little Miss">
             <a href="contactus.html">Contact Us</a>
         </header>
         <hr>
@@ -31,7 +31,7 @@
                     <a class="hidemenu" href="inventory.html">Inventory</a>
                 </li>
                 <li>
-                    <a class="hidemenu" href="reviewsgallery.html">Reviews and Gallery</a>
+                    <a class="hidemenu" href="reviewsgallery.html">Reviews/Gallery</a>
                 </li>
             </ul>
         </nav>
@@ -41,18 +41,6 @@
         <h1 id="surveyheading">Order Here!</h1>
         <form action="thanks.html" method="GET">
             <article id="form">
-                <section>
-                    <span>
-                        <label for= "typeProduct">What product? ** <br> </label>
-                        <br>
-                    <input type="checkbox" id="type1" name="type1" value="topknot">
-                    <label for="type1"> Top Knot </label><br>
-                    <br>
-                    <input type="checkbox" id="type2" name="type2" value="bow">
-                    <label for="type2"> Bow </label><br>
-                    </span>
-                    <br><br>
-                        </section>
             <section>
             <span>
                 <label for="fullName">Full Name: </label>
@@ -76,7 +64,7 @@
                 <input type="text" id="shipping" name="city" required>
             </span> <br><br>
             <span>
-                <label for="shipping"> State: </label>
+                <label for="shipping"> State (abbreviation, please): </label>
                 <input type="text" id="shipping" name="state" required>
             </span> <br><br>
             <span>
@@ -101,12 +89,23 @@
                     <option value="4">4</option>
                 </select>
             </span> <br> <br> -->
+            <p>*each product is $4 <br>
+                *shipping is $4 unless your order is over $25</p> <br>
         </section>
-                <section>
+        <section>
+            <span>
+                <label for= "typeProduct">What product?<br> </label>
+                <br>
+            <input type="checkbox" id="type1" name="type1" value="topknot">
+            <label for="type1"> Top Knot </label>
+            <input type="checkbox" id="type2" name="type2" value="bow">
+            <label for="type2"> Bow </label><br>
+            </span>
+            <br><br>
                     <span>
                         <label for="typeProduct">If you chose bow...</label> <br><br>
                         What print?<br>
-                        <textarea name="additionalComments" id="additionalComments" cols="15" rows="2"></textarea><br>
+                        <textarea name="additionalComments" id="additionalComments" cols="15" rows="2"></textarea><br><br>
                         What size?
                         <label for="thick">
                             <input type="checkbox" value="thick" name="typeProduct" id="thick">
@@ -125,7 +124,10 @@
                             <input type="checkbox" value="aligatorclip" name="typeProduct" id="aligatorclip">
                             Aligator Clip
                         </label> <br><br><br>
+                    </span>
                 <span>
+                </section>
+                <section>
                     <label for="additionalComments">If you chose top knot...</label> <br><br>
                     What print? <br>
                     <textarea name="additionalComments" id="additionalComments" cols="15" rows="2"></textarea> <br><br>
@@ -138,6 +140,7 @@
                         <input type="radio" value="skinny" name="typeProduct" id="skinny">
                         6-12 months
                     </label>
+                    <br>
                     <label for="medium">
                         <input type="radio" value="skinny" name="typeProduct" id="skinny">
                         1-3 years
@@ -148,9 +151,7 @@
                     </label>
                 </span><br>
             </span> <br>
-        </section>
-    </article>
-    <br><br>
+    <br>
     <span>
         <label for="additionalComments">Type any additional instructions here:</label> <br>
         <textarea name="additionalComments" id="additionalComments" cols="30" rows="3"></textarea>
@@ -158,10 +159,10 @@
     <span>
         <input type="submit" value="Submit">
         <input type="reset" value="Clear">
-    </span> <br><br>
-            *each product is $4 <br>
-            *shipping is $4 unless your order is over $25
-        </form>
+    </span> <br>
+    </section>
+    </article>
+</form>
     </main>
 
     <footer>

@@ -2,6 +2,15 @@ a {
     text-decoration: none;
     color: #0a0903;
 }
+.bio {
+    display: grid;
+    grid-template-columns: 1fr;
+    border: none;
+    padding-top: 2em;
+}
+.bio img {
+    border: 6px double #0a0903;
+}
 body {
     /* background-color: #eff1ed; */
     font-family: 'Montez', cursive;
@@ -21,23 +30,30 @@ div h5 {
     margin-left: auto;
     margin-right: auto;
 }
+#form section {
+    border: 4px double #0a0903;
+    padding: 1em;
+}
 footer {
     display: block;
     background-color: #CEEBBF;
     color: #0a0903;
-    margin-top: 10em;
-    padding: 2em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    margin-top: 4em;
+    font-size: 10pt;
+    text-align: center;
+}
+#hamburger {
     text-align: center;
 }
 header img {
-    width: 125px;
-    margin-right: 80%;
+    width: 100px;
     padding: 1em;
 }
 header {
-    text-align: right;
-    margin-right: 4em;
     background-color: #CEEBBF;
+    text-align: center;
 }
 #heading {
     display: block;
@@ -52,22 +68,23 @@ header {
     margin-top: 2em;
 }
 .inventory div {
-    width: 300px;
-    margin: 2em 2em 2em 30%;
+    margin: 0.5em;
     border: 2px solid #0a0903;
-    padding: 2em 2em 0em 2em;
+    width: 200px;
+}
+.inventory div img {
+    width: 100px;
 }
 .inventory div:hover {
-    box-shadow: #c0d684 10px 10px 20px;
+    box-shadow: #CEEBBF 15px 15px 20px;
 }
 main img {
-    height: 200px;
     margin: 0.5em;
 }
 nav {
     display: block;
     background-color: #CEEBBF;
-    padding: 1em;
+    padding: 0.5em;
 }
 li a {
     text-decoration: none;
@@ -77,26 +94,72 @@ li a {
 #reviews {
     margin-top: 2em;
 }
+.reviewsgallery {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+#s1 {
+    margin-left: 0%;
+}
+#s2 {
+    margin-right: 0%;
+}
+section img{
+    width: 200px;
+}
 ul {
     list-style-type: none;
     display: flex;
     flex-direction: column;
     text-align: center;
+    padding-left: 0em;
 }
 @media only screen and (min-width: 32.5em) {
+    main .bio {
+        grid-template-columns: 1fr 1fr;
+    }
+    header img {
+        width: 150px;
+    }
+
     body #form {
        grid-template-columns: 1fr 1fr 1fr;
+    }
+    body footer {
+        text-align: center;
+        font-size: 14pt;
     }
     #hamburger {
         display: none;
     }
+    #heading a {
+        margin-left: 78%;
+    }
     .hidemenu {
         display: block;
+    }
+    body .inventory div {
+        margin: 2em 2em 2em 30%;
+        padding: 2em 2em 0em 2em;
+        width: 300px;
+    }
+    body .inventory div img {
+        width: 200px;
     }
     .inventory {
         grid-template-columns: 1fr 1fr;
     }
-    ul {
+    .reviewsgallery {
+        grid-template-columns: 1fr 1fr;
+    }
+    article #s1 {
+        margin-left: 45%;
+    }
+article #s2 {
+        margin-right: 50%;
+    }
+    nav ul {
+        font-size: 10pt;
         flex-direction: row;
     justify-content: space-evenly;
     }
