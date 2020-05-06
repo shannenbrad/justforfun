@@ -9,32 +9,32 @@
 </head>
 <body>
     <span id="heading">
-    <header>
-        <span><img src="images/logo.jpg" alt="Little Miss"></span>
-        <a href="contactus.html">Contact Us</a>
+        <header>
+            <!-- <span><img src="images/logo.jpg" alt="Little Miss">
+            </span> -->
+            <!-- <hr> -->
+        <nav>
+            <ul>
+                <li id = "hamburger">
+                    <a onclick = "hidemenu()">&equiv; Menu</a>
+                </li>
+                <li><img src="images/logo.jpg" alt="Little Miss"></li>
+                <li>
+                    <a href="index.html" class="hidemenu">Home</a>
+                </li>
+                <li>
+                    <a href="order.html" class="hidemenu">Order</a>
+                </li>
+                <li>
+                    <a href="inventory.html" class="hidemenu">Inventory</a>
+                </li>
+                <li>
+                    <a href="reviewsgallery.html" class="hidemenu">Reviews/Gallery</a>
+                </li>
+            </ul>
+        </nav>
     </header>
-    <hr>
-    <nav>
-        <ul>
-            <li id = "hamburger">
-                <a onclick = "hidemenu()">&equiv; Menu</a>
-            </li>
-            <li>
-                <a href="index.html" class="hidemenu">Home</a>
-            </li>
-            <li>
-                <a href="order.html" class="hidemenu">Order</a>
-            </li>
-            <li>
-                <a href="inventory.html" class="hidemenu">Inventory</a>
-            </li>
-            <li>
-                <a href="reviewsgallery.html" class="hidemenu">Reviews/Gallery</a>
-            </li>
-        </ul>
-    </nav>
-</span>
-
+    </span>
 <main>
     <h1>About Little Miss Bowtique</h1>
 <article class="bio">
@@ -47,11 +47,22 @@
     Neque, deserunt officiis, non vitae nobis, <br> adipisci ducimus quas obcaecati <br> illo repellat et eaque eos.
 </section>
 </article>
-
+<hr>
+<span id="table">
+<table>
+    <thead>
+        <th>Upcoming Events</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td> *no events to show </td>
+        </tr>
+    </tbody>
+</table>
+</span>
 </main>
-
 <footer>
-    All rights reserved | Little Miss | Copyright 2020 
+    All rights reserved | Little Miss | Copyright 2020 | <a href="contactus.html">Contact Us</a>
 </footer>
 </body>
 <script src="script/main.js"></script>
