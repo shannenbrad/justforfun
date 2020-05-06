@@ -39,7 +39,7 @@
     </span>
     <main>
         <h1 id="surveyheading">Order Here!</h1>
-        <form action="thanks.html" method="GET">
+        <form action="thanks.html" method="POST">
             <article id="form">
             <section>
             <span>
@@ -96,10 +96,18 @@
             <span>
                 <label for= "typeProduct">What product?<br> </label>
                 <br>
-            <input type="checkbox" id="type1" name="type1" value="topknot">
+            <input type="checkbox" id="type1" name="type1" value="topknot" onchange="showQtyInput(event)">
             <label for="type1"> Top Knot </label>
-            <input type="checkbox" id="type2" name="type2" value="bow">
-            <label for="type2"> Bow </label><br>
+            <div  id="type1qty" style=" display:none">
+            <label for="type1qty"> Quantity: </label>
+            <input type="number" name="type1qty" value="topknotQty" style="width: 25%;">
+            </div>
+            <input type="checkbox" id="type2" name="type2" value="bow" onchange="showQtyInput(event)">
+            <label for="type2"> Bow </label>
+            <div  id="type2qty" style=" display:none">
+                <label for="type2qty"> Quantity: </label>
+                <input type="number" name="type2qty" value="topknotQty" style="width: 25%;">
+                </div><br>
             </span>
             <br><br>
                     <span>
@@ -108,11 +116,11 @@
                         <textarea name="additionalComments" id="additionalComments" cols="15" rows="2"></textarea><br><br>
                         What size?
                         <label for="thick">
-                            <input type="checkbox" value="thick" name="typeProduct" id="thick">
+                            <input type="radio" value="thick" name="typeProduct" id="thick">
                             Thick
                         </label>
                         <label for="skinny">
-                            <input type="checkbox" value="skinny" name="typeProduct" id="skinny">
+                            <input type="radio" value="skinny" name="typeProduct" id="skinny">
                             Skinny
                         </label> <br><br>
                         What type?
