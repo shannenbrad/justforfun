@@ -21,14 +21,25 @@ app.post('/order-submit', (req, res) => {
     req.body.type1qty = +req.body.type1qty;
     req.body.type2qty = +req.body.type2qty;
 
+    req.body.bowSize = req.body.bowSize || "";
+    req.body.bowType = req.body.bowType || "";
+
     console.log(req.body);
-    const sql = "insert into orders values (DEFAULT, ${fullName}, ${email}, ${phoneNumber}, ${street}, ${city}, ${state}, ${zipcode}, ${type1qty}, ${type2qty},${bowPrint},${topknotPrint},${topknotSize},${additionalComments}, 'NEW');"
+    const sql = "insert into orders values (DEFAULT, ${fullName}, ${email}, ${phoneNumber}, ${street}, ${city}, ${state}, ${zipcode}, ${type1qty}, ${type2qty},${bowPrint}, ${bowSize}, ${bowType}, ${topknotPrint},${topknotSize},${additionalComments}, 'NEW');"
     db.none(sql, req.body)
         .then(async () => {
             await notifyManagerOfInvoiceShipped(req.body.fullName, req.body.type1qty, req.body.type2qty);
             res.redirect('./thanks.html')
         })
         .catch(err => console.log(err));
+})
+
+app.get('/get-orders', (req, res) => {
+  console.log(req);
+  const sql = "select * from orders where status != 'NEW";
+  db.any(sql)
+  .then((data) => res.send(data));
+  // res.end();
 })
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
