@@ -1,6 +1,186 @@
-nav {
+a {
     text-decoration: none;
+    color: #0a0903;
+}
+.bio {
+    display: grid;
+    grid-template-columns: 1fr;
+    border: none;
+    padding-top: 2em;
+}
+.bio img {
+    border: 4px double #0a0903;
+}
+body {
+    /* background-color: #eff1ed; */
+    font-family: 'Montez', cursive;
+    font-weight: 900;
+}
+body main {
+    text-align: center;
+    font-family: 'Dosis', sans-serif;
+}
+div h5 {
+    background-color:  #F3F9D2;
+    padding: 1em;
+}
+#form {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-left: auto;
+    margin-right: auto;
+}
+#form section {
+    border: 4px double #0a0903;
+    padding: 1em;
+}
+footer {
+    display: block;
+    background-color: #CEEBBF;
+    color: #0a0903;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    margin-top: 4em;
+    font-size: 10pt;
+    text-align: center;
+}
+#hamburger {
+    text-align: center;
+}
+header img {
+    width: 100px;
+    padding: 1em;
+}
+header {
+    background-color: #CEEBBF;
+    text-align: center;
+}
+#heading {
+    display: block;
+    background-color: #CEEBBF;
+}
+hr {
+    background-color: #F3F9D2;
+    height: 1em;
+}
+.hidemenu {
+    display: none;  
+}
+.inventory {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 2em;
+}
+.inventory div {
+    margin: 0.5em;
+    border: 2px solid #0a0903;
+    width: 200px;
+}
+.inventory div img {
+    width: 100px;
+}
+.inventory div:hover {
+    box-shadow: #CEEBBF 15px 15px 20px;
+}
+main img {
+    margin: 0.5em;
+}
+nav {
+    display: block;
+    background-color: #CEEBBF;
+    padding: 0.5em;
 }
 li a {
-    list-style: none;
+    text-decoration: none;
+    color: #0a0903;
+    font-size: 24px;
 }
+#reviews {
+    margin-top: 2em;
+}
+.reviewsgallery {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+#s1 {
+    margin-left: 0%;
+}
+#s2 {
+    margin-right: 0%;
+}
+section img{
+    width: 200px;
+}
+table {
+    justify-content: center;
+    border: 2px solid #0a0903;
+    padding: 1em;
+}
+#table table {
+    margin-top: 4em;
+    margin-left: auto;
+    margin-right: auto;
+}
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-left: 0em;
+}
+@media only screen and (min-width: 32.5em) {
+    main .bio {
+        grid-template-columns: 1fr 1fr;
+    }
+    header img {
+        width: 150px;
+    }
+
+    /* body #form {
+       grid-template-columns: 1fr 1fr 1fr;
+    } */
+    body footer {
+        text-align: center;
+        font-size: 14pt;
+    }
+    #hamburger {
+        display: none;
+    }
+    #heading a {
+        margin-left: 78%;
+    }
+    header nav img {
+        margin-left: -12em;
+    }
+    .hidemenu {
+        display: block;
+        margin-top: 2.5em;
+        margin-left: -8em;
+    }
+    body .inventory div {
+        margin: 2em 2em 2em 30%;
+        padding: 2em 2em 0em 2em;
+        width: 300px;
+    }
+    body .inventory div img {
+        width: 200px;
+    }
+    .inventory {
+        grid-template-columns: 1fr 1fr;
+    }
+    .reviewsgallery {
+        grid-template-columns: 1fr 1fr;
+    }
+    article #s1 {
+        margin-left: 45%;
+    }
+article #s2 {
+        margin-right: 50%;
+    }
+    nav ul {
+        font-size: 10pt;
+        flex-direction: row;
+    justify-content: space-evenly;
+    }
+}
+

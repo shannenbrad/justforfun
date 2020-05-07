@@ -1,0 +1,26 @@
+{
+  "name": "shannenbrad.github.io",
+  "version": "1.0.0",
+  "description": "Personal Project space",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemailer": "^6.4.6",
+    "pg-promise": "^10.5.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shannenbrad/shannenbrad.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shannenbrad/shannenbrad.github.io/issues"
+  },
+  "homepage": "https://github.com/shannenbrad/shannenbrad.github.io#readme"
+}
