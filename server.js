@@ -36,7 +36,7 @@ app.post('/order-submit', (req, res) => {
 
 app.get('/get-orders', (req, res) => {
   console.log(req);
-  const sql = "select * from orders where status != 'NEW";
+  const sql = "select * from orders where status != 'COMPLETE'";
   db.any(sql)
   .then((data) => res.send(data));
   // res.end();
@@ -62,7 +62,7 @@ async function notifyManagerOfInvoiceShipped(fullName, type1qty, type2qty) {
   
     var mailOptions = {
       from: 'littlemissnotifications@gmail.com',
-      to: 'jeff.david.bradley@gmail.com',
+      to: 'mdykstra06@gmail.com',
       subject: 'A customer has placed a new order!',
       text: `A new order has been placed by ${fullName} for ${type1qty} topknots and ${type2qty} bows.`
     };

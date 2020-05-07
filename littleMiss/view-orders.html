@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/small.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@600&family=Montez&display=swap" rel="stylesheet">
+    <title>Home</title>
+    <style>
+        table, td {
+          border: 1px solid black;
+        }
+
+        table{
+            margin-left:auto;
+            margin-right: auto;
+        }
+        </style>
+</head>
+
+<body>
+    <span id="heading">
+        <header>
+            <nav>
+                <ul>
+                    <li><img src="images/logo.jpg" alt="Little Miss"></li>
+                    <li id = "hamburger">
+                        <a onclick = "hidemenu()">&equiv; Menu</a>
+                    </li>
+                    <li>
+                        <a href="index.html" class="hidemenu">Home</a>
+                    </li>
+                    <li>
+                        <a href="order.html" class="hidemenu">Order</a>
+                    </li>
+                    <li>
+                        <a href="inventory.html" class="hidemenu">Inventory</a>
+                    </li>
+                    <li>
+                        <a href="reviewsgallery.html" class="hidemenu">Reviews/Gallery</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </span>
+    <main>
+        <table id="orders-table">
+            <tr>
+                <th>Name</th>
+                <th>
+                    Email
+                </th>
+                <th>Address</th>
+                <th>Phone Number</th>
+                <th>Topknot Quantity</th>
+                <th>Topknot Print</th>
+                <th>Topknot Size</th>
+                <th>Bow Quantity</th>
+                <th>Bow Print</th>
+                <th>Bow Size</th>
+                <th>Bow Type</th>
+                <th>Customer's Comments</th>
+                <th>Order Status</th>
+            </tr>
+
+        </table>
+    </main>
+
+    <footer>
+        All rights reserved | Little Miss | Copyright 2020 | <a href="contactus.html">Contact Us</a>
+    </footer>
+</body>
+<script src="script/main.js"></script>
+<script src="script/loadOrders.js"></script>
+
+</html>
