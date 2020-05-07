@@ -136,9 +136,9 @@ ul {
         width: 150px;
     }
 
-    body #form {
+    /* body #form {
        grid-template-columns: 1fr 1fr 1fr;
-    }
+    } */
     body footer {
         text-align: center;
         font-size: 14pt;

@@ -12,10 +12,17 @@ function hidemenu() {
 }
 
 function showQtyInput(event) {
-    let element = document.getElementById(event.target.id + 'qty');
-    if (event.target.checked)
-        element.style.display = 'block';
+    console.log(event.target.id);
+    let qty = document.getElementById(event.target.id + 'qty');
+    let print = document.getElementById(event.target.id + 'print');
+    if (event.target.checked) {
+        qty.style.display = 'block';
+        print.style.display = 'block';
 
-    else
-        element.style.display = 'none';
+    }
+
+    else {
+        qty.style.display = 'none';
+        print.style.display = 'none';
+    }
 }
