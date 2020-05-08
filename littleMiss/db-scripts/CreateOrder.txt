@@ -1,0 +1,21 @@
+CREATE TABLE orders (
+   order_id serial PRIMARY KEY,
+   fullname VARCHAR(100) NOT NULL,
+   email VARCHAR(100) NOT NULL,
+   phonenumber VARCHAR(20) NOT NULL,
+   street VARCHAR(100) NOT NULL,
+   city VARCHAR(100) NOT NULL,
+   state VARCHAR(4) NOT NULL,
+   zipcode VARCHAR(10) NOT NULL,
+   type1qty INTEGER NOT NULL,
+   type2qty INTEGER NOT NULL,
+   bowprint VARCHAR(100),
+   bowSize VARCHAR(25),
+   bowType VARCHAR(50),
+   topknotprint VARCHAR(100),
+   topknotsize VARCHAR(50),
+   additionalcomments TEXT,
+   status VARCHAR(25) NOT NULL
+);
+
+insert into orders values (DEFAULT, ${fullName}, ${email}, ${initials}, now());
