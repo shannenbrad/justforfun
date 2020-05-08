@@ -11,12 +11,23 @@ console.log(process.env.PORT);
 app.use(express.static('littleMiss'))
 app.use(express.urlencoded())
 
+
+console.log('env', process.env.NODE_ENV);
 const con = {
-    user: 'postgres',
-    host: 'localhost',
-    database: 'lilmiss',
-    port: 5432
-  }
+  user: 'acmaoxibesxusb',
+  host: 'ec2-3-223-21-106.compute-1.amazonaws.com',
+  database: 'd1tqvtnl8kpq0',
+  password: 'e2a8df31329bfb12938c29029e5413ef7e75a4bb6833aa87c0a659262be8b528',
+  port: 5432,
+  ssl: true
+}
+
+// const con = {
+//     user: 'postgres',
+//     host: 'localhost',
+//     database: 'lilmiss',
+//     port: 5432
+//   }
   const db = pgp(con);
 
 app.post('/order-submit', (req, res) => {
