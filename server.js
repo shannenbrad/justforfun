@@ -14,7 +14,7 @@ app.use(express.urlencoded())
 
 console.log('env', process.env.NODE_ENV);
 let con = {};
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV === 'production') {
   con = {
     user: 'acmaoxibesxusb',
     host: 'ec2-3-223-21-106.compute-1.amazonaws.com',
