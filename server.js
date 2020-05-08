@@ -5,6 +5,8 @@ const pgp = require('pg-promise')();
 
 const nodemailer = require('nodemailer');
 
+console.log(process.env.PORT);
+
 
 app.use(express.static('littleMiss'))
 app.use(express.urlencoded())
