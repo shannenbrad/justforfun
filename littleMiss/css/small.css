@@ -115,12 +115,25 @@ table {
     justify-content: center;
     border: 2px solid #0a0903;
     padding: 1em;
+    margin-top: 2em;
 }
 #table table {
-    margin-top: 4em;
+    margin-top: 2em;
     margin-left: auto;
     margin-right: auto;
 }
+
+#orders-table td {
+    border: 1px solid black;
+    padding: 0.5em;
+    font-family: 'Dosis', sans-serif;
+  }
+#orders-table th {
+      font-weight: 800;
+      font-family: 'Montez', cursive;
+      padding: 0.5em;
+      font-size: 16pt;
+  }
 ul {
     list-style-type: none;
     display: flex;
@@ -136,9 +149,10 @@ ul {
         width: 150px;
     }
 
-    /* body #form {
-       grid-template-columns: 1fr 1fr 1fr;
-    } */
+      table{
+          margin-left:auto;
+          margin-right: auto;
+      }
     body footer {
         text-align: center;
         font-size: 14pt;
