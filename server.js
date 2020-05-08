@@ -43,6 +43,11 @@ app.post('/order-submit', (req, res) => {
   req.body.bowSize = req.body.bowSize || "";
   req.body.bowType = req.body.bowType || "";
 
+  req.body.topknotSize = req.body.topknotSize || "";
+  req.body.topknotPrint = req.body.topknotPrint || "";
+
+  
+
   console.log(req.body);
   const sql = "insert into orders values (DEFAULT, ${fullName}, ${email}, ${phoneNumber}, ${street}, ${city}, ${state}, ${zipcode}, ${type1qty}, ${type2qty},${bowPrint}, ${bowSize}, ${bowType}, ${topknotPrint},${topknotSize},${additionalComments}, 'NEW');"
   db.none(sql, req.body)
