@@ -21,9 +21,7 @@ if (process.env.NODE_ENV !== 'production') {
     database: 'd1tqvtnl8kpq0',
     password: 'e2a8df31329bfb12938c29029e5413ef7e75a4bb6833aa87c0a659262be8b528',
     port: 5432,
-    ssl: {
-      rejectUnauthorized: false
-    }
+    ssl: { rejectUnauthorized: false }
   }
 }
 else {
