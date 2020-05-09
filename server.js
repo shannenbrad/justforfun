@@ -53,7 +53,7 @@ app.post('/order-submit', (req, res) => {
   const sql = "insert into orders values (DEFAULT, ${fullName}, ${email}, ${phoneNumber}, ${street}, ${city}, ${state}, ${zipcode}, ${type1qty}, ${type2qty},${bowPrint}, ${bowSize}, ${bowType}, ${topknotPrint},${topknotSize},${additionalComments}, 'NEW');"
   db.none(sql, req.body)
     .then(async () => {
-      // await notifyManagerOfInvoiceShipped(req.body.fullName, req.body.type1qty, req.body.type2qty);
+      await notifyManagerOfInvoiceShipped(req.body.fullName, req.body.type1qty, req.body.type2qty);
       res.redirect('./thanks.html')
     })
     .catch(err => console.log(err));
