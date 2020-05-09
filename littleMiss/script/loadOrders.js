@@ -1,5 +1,8 @@
 let orders = [];
 function loadOrders(){
+    orders = [];
+
+
     httpRequest = new XMLHttpRequest();
 
     httpRequest.onreadystatechange = function(event){
@@ -15,7 +18,9 @@ function loadOrders(){
         })
 
         console.log('o', orders);
-        let table = document.getElementById('orders-table');
+        let table = document.getElementById('table-body');
+        table.innerHTML = '';
+        
         orders.forEach(order => {
             let newRow = table.insertRow(-1);
             // newRow.style = "outline: thin solid";
@@ -45,8 +50,12 @@ function loadOrders(){
             bowSize.innerHTML = order.bowsize;
             bowType.innerHTML = order.bowtype;
             comments.innerHTML = order.additionalcomments;
-            status.innerHTML = order.status + "<input type='button' value='Complete order'>"
-
+            let statusString = order.status;
+            if (statusString !== "COMPLETE"){
+                statusString += "<input type='button' value='Complete order' onclick='completeOrder(" + order.order_id +")'>";
+            }
+            status.innerHTML = statusString; 
+            console.log(order);
 
         })
         console.log(table);
@@ -54,6 +63,21 @@ function loadOrders(){
 
     httpRequest.open('GET', '/get-orders', true);
     httpRequest.send();
+}
+
+function completeOrder(orderId){
+    console.log("completeing", orderId);
+    httpRequest = new XMLHttpRequest();
+
+    httpRequest.onreadystatechange = function(event){
+        
+        if (event.target.readyState == 4 && event.target.status == 200)
+            loadOrders();
+    }
+ 
+    httpRequest.open('POST', '/complete-order', true);
+    httpRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    httpRequest.send(`orderId=${orderId}`);
 }
 
 loadOrders();

@@ -28,6 +28,7 @@ else {
   con = {
     user: 'postgres',
     host: 'localhost',
+    password: 'postgres',
     database: 'lilmiss',
     port: 5432
   }
@@ -59,11 +60,19 @@ app.post('/order-submit', (req, res) => {
 })
 
 app.get('/get-orders', (req, res) => {
-  console.log(req);
-  const sql = "select * from orders where status != 'COMPLETE'";
+  const sql = "select * from orders";
   db.any(sql)
     .then((data) => res.send(data));
   // res.end();
+})
+
+app.post('/complete-order', (req, res) => {
+  console.log('completing')
+  console.log(req.body);
+  const sql = "update orders set status = 'COMPLETE' where order_id = ${orderId}";
+  db.any(sql, req.body)
+    .then(() => res.status(200).end())
+    .catch((err) => console.log(err))
 })
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
