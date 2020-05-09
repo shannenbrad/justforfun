@@ -45,7 +45,7 @@ function loadOrders(){
             bowSize.innerHTML = order.bowsize;
             bowType.innerHTML = order.bowtype;
             comments.innerHTML = order.additionalcomments;
-            status.innerHTML = order.status
+            status.innerHTML = order.status + "<input type='button' value='Complete order'>"
 
 
         })
