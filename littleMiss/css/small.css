@@ -149,6 +149,9 @@ table {
       padding: 0.5em;
       font-size: 16pt;
   }
+body span header nav .portalnav {
+    padding-top: 4em;
+}
 ul {
     list-style-type: none;
     display: flex;
