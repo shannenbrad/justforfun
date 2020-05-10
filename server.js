@@ -79,6 +79,13 @@ app.get('/get-orders', (req, res) => {
   // res.end();
 })
 
+app.get('/get-subscriptions', (req, res) => {
+  const sql = "select * from monthlysubscription";
+  db.any(sql)
+    .then((data) => res.send(data));
+  // res.end();
+})
+
 app.post('/complete-order', (req, res) => {
   console.log('completing')
   console.log(req.body);
@@ -88,6 +95,23 @@ app.post('/complete-order', (req, res) => {
     .catch((err) => console.log(err))
 })
 
+app.post('/complete-subscription', (req, res) => {
+  console.log('completing')
+  console.log(req.body);
+  const sql = "update monthlysubscription set status = 'COMPLETE' where monthly_id = ${monthly_id}";
+  db.any(sql, req.body)
+    .then(() => res.status(200).end())
+    .catch((err) => console.log(err))
+})
+
+app.post('/newmonth-subscription', (req, res) => {
+  console.log('')
+  console.log(req.body);
+  const sql = "update monthlysubscription set status = 'NEW' where monthly_id = ${monthly_id}";
+  db.any(sql, req.body)
+    .then(() => res.status(200).end())
+    .catch((err) => console.log(err))
+})
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
 
 async function notifyManagerOfInvoiceShipped(fullName, type1qty, type2qty) {
