@@ -82,6 +82,9 @@ hr {
 .inventory div:hover {
     box-shadow: #CEEBBF 15px 15px 20px;
 }
+body main section #monthlyInput {
+    text-align: center;
+}
 main img {
     margin: 0.5em;
 }
@@ -110,6 +113,18 @@ li a {
 }
 section img{
     width: 200px;
+}
+#subscription {
+    border: 4px double black;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+    width: 400px;
+    text-align: left;
+}
+#subscriptionH {
+    font-weight: bolder;
+    font-size: 24pt;
 }
 table {
     justify-content: center;
