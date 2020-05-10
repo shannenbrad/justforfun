@@ -58,12 +58,12 @@ app.post('/order-submit', (req, res) => {
 })
 
 app.post('/monthlysubscription-submit', (req, res) => {
-
   req.body.bowSize = req.body.bowSize || "";
   req.body.bowType = req.body.bowType || "";
 
   console.log(req.body);
-  const sql = "insert into monthlysubscription values (DEFAULT, ${fullName}, ${email}, ${phoneNumber}, ${street}, ${city}, ${state}, ${zipcode}, ${type1}, ${type2}, ${bowSize}, ${bowType}, ${additionalComments}, 'NEW');"
+  //phonenumber, 
+  const sql = "insert into monthlysubscription values (DEFAULT, ${fullName}, ${email}, ${phoneNumber}, ${street}, ${city}, ${state}, ${zipcode}, ${products}, ${bowType}, ${bowSize}, ${additionalComments}, 'NEW');"
   db.none(sql, req.body)
     .then(async () => {
       await notifyManagerOfInvoiceShipped(req.body.fullName, req.body.type1, req.body.type2);
@@ -114,11 +114,11 @@ async function notifyManagerOfInvoiceShipped(fullName, type1qty, type2qty) {
   };
 
 
-  transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log('Email sent: ' + info.response);
-    }
-  });
+  // transporter.sendMail(mailOptions, function (error, info) {
+  //   if (error) {
+  //     console.log(error);
+  //   } else {
+  //     console.log('Email sent: ' + info.response);
+  //   }
+  // });
 }
