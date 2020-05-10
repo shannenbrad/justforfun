@@ -67,7 +67,7 @@ app.post('/monthlysubscription-submit', (req, res) => {
   db.none(sql, req.body)
     .then(async () => {
       await notifyManagerOfInvoiceShipped(req.body.fullName, req.body.type1, req.body.type2);
-      res.redirect('./thanks.html')
+      res.redirect('./subscriptionsubmitted.html')
     })
     .catch(err => console.log(err));
 })
