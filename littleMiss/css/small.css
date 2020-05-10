@@ -20,6 +20,10 @@ body main {
     text-align: center;
     font-family: 'Dosis', sans-serif;
 }
+#current {
+    background-color: #F3F9D2;
+    width: 130px;
+}
 div h5 {
     background-color:  #F3F9D2;
     padding: 1em;
