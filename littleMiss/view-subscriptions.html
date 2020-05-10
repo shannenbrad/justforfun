@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/small.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@600&family=Montez&display=swap" rel="stylesheet">
+    <title>Home</title>
+</head>
+
+<body>
+    <span id="heading">
+        <header>
+            <nav>
+                <ul>
+                    <li><img src="images/logo.jpg" alt="Little Miss"></li>
+                    <li id = "hamburger">
+                        <a onclick = "hidemenu()">&equiv; Menu</a>
+                    </li>
+                    <li>
+                        <a href="index.html" class="hidemenu">Home</a>
+                    </li>
+                    <li>
+                        <a href="order.html" class="hidemenu">Order</a>
+                    </li>
+                    <li>
+                        <a href="inventory.html" class="hidemenu">Inventory</a>
+                    </li>
+                    <li>
+                        <a href="reviewsgallery.html" class="hidemenu">Reviews/Gallery</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </span>
+    <main>
+        <table id="subscriptions-table">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Phone Number</th>
+                <th>Type of subscription</th>
+                <th>Bow preference</th>
+                <th>Customer's Comments</th>
+                <th>Order Status</th>
+            </tr>
+            <tbody id="table-body">
+                
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        All rights reserved | Little Miss | Copyright 2020 | <a href="contactus.html">Contact Us</a>
+    </footer>
+</body>
+<script src="script/main.js"></script>
+<script src="script/loadSubscriptions.js"></script>
+
+</html>
