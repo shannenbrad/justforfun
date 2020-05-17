@@ -263,6 +263,9 @@ article #s2 {
     header nav img {
         margin-left: -12em;
     }
+    #order {
+        width: 800px
+    }
     #reviews {
         width: 500px;
         padding: 1em;
