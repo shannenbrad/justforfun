@@ -80,7 +80,7 @@ hr {
 .hidemenu {
     display: none;  
 }
-.inventory {
+ .inventory {
     display: grid;
     grid-template-columns: 1fr;
     margin-top: 2em;
@@ -256,6 +256,9 @@ article #s2 {
 @media only screen and (min-width: 62.5em) { 
     #current {
         width: 130px;
+    }
+    body main .inventory {
+        grid-template-columns: 1fr 1fr;
     }
     #Gallery {
         width: 700px;
