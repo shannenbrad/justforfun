@@ -20,9 +20,19 @@ body main {
     text-align: center;
     font-family: 'Dosis', sans-serif;
 }
+#calltoaction {
+    margin-top: 1em;
+    border: 4px double #0a0903;
+    background-color: #CEEBBF;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+}
 #current {
     background-color: #F3F9D2;
-    width: 130px;
+    width: 50px;
+    justify-content: center;
 }
 div h5 {
     background-color:  #F3F9D2;
@@ -123,7 +133,7 @@ section img{
     margin-left: auto;
     margin-right: auto;
     padding: 1em;
-    width: 400px;
+    width: 250px;
     text-align: left;
 }
 #subscriptionH {
@@ -170,7 +180,9 @@ ul {
     header img {
         width: 150px;
     }
-
+    #current {
+        width: 80px;
+    }
       table{
           margin-left:auto;
           margin-right: auto;
@@ -183,10 +195,10 @@ ul {
         display: none;
     }
     #heading a {
-        margin-left: 78%;
+        margin-left: 18%;
     }
     header nav img {
-        margin-left: -12em;
+        margin-left: -4em;
     }
     .hidemenu {
         display: block;
@@ -218,5 +230,18 @@ article #s2 {
         flex-direction: row;
     justify-content: space-evenly;
     }
+    #subscription {
+        width: 400px;
+    }
 }
-
+@media only screen and (min-width: 62.5em) { 
+    #current {
+        width: 130px;
+    }
+    #heading a {
+        margin-left: 78%;
+    }
+    header nav img {
+        margin-left: -12em;
+    }
+}
