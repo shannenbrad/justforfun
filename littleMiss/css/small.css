@@ -84,6 +84,8 @@ hr {
     display: grid;
     grid-template-columns: 1fr;
     margin-top: 2em;
+    margin-left: auto;
+    margin-right: auto;
 }
 .inventory div {
     margin: 0.5em;
@@ -151,6 +153,11 @@ table {
     margin-top: 2em;
     margin-left: auto;
     margin-right: auto;
+}
+#thanks {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 #order {
     border: #CEEBBF double 4px;
@@ -224,9 +231,6 @@ ul {
     }
     body .inventory div img {
         width: 200px;
-    }
-    .inventory {
-        grid-template-columns: 1fr 1fr;
     }
     .reviewsgallery {
         grid-template-columns: 1fr 1fr;
