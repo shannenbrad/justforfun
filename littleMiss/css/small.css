@@ -114,6 +114,7 @@ li a {
 }
 #reviews {
     margin-top: 2em;
+    border: #CEEBBF double 4px ;
 }
 .reviewsgallery {
     display: grid;
@@ -191,6 +192,10 @@ ul {
         text-align: center;
         font-size: 14pt;
     }
+    #Gallery {
+        border: #CEEBBF double 4px ;
+        margin-top: 2em;
+    }
     #hamburger {
         display: none;
     }
@@ -230,6 +235,9 @@ article #s2 {
         flex-direction: row;
     justify-content: space-evenly;
     }
+    #reviews {
+        width: 300px;
+    }
     #subscription {
         width: 400px;
     }
@@ -238,10 +246,18 @@ article #s2 {
     #current {
         width: 130px;
     }
+    #Gallery {
+        width: 700px;
+        margin-top: 2em;
+    }
     #heading a {
         margin-left: 78%;
     }
     header nav img {
         margin-left: -12em;
+    }
+    #reviews {
+        width: 500px;
+        padding: 1em;
     }
 }
