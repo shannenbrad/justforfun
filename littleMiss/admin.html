@@ -31,7 +31,7 @@
         Future spot for log in
 
         <h1>Upload/Delete Photos</h1>
-        <form action="POST">
+        <form method="POST" action="/image-submit" enctype="multipart/form-data">
             <span>
                 <label for="data">Upload your image here:</label>
                 <input type="file" value="data" name="data" id="data">

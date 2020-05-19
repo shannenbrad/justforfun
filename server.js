@@ -98,16 +98,21 @@ app.post('/complete-order', (req, res) => {
 })
 
 app.post('/image-submit', (req, res) => {
-
+  console.log('hello moto');
   const form = formidable({ multiples: true });
-
+  console.log(form);
   form.parse(req, (err, fields, files) => {
+      console.log('in parse');
       if (err) {
+          console.log(err);
           res.status(500).end();
           return;
       }
+
+      console.log('hello', files.data.path);
       fs.readFile(files.data.path, (err, data) => {
           if (err) res.status(500).end();
+          console.log('running query', fields);
           const sql = 'insert into images values (DEFAULT, ${description}, ${data})';
           db.none(sql, { description: fields.description, data: data })
               .then(async () => {
