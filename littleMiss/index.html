@@ -17,7 +17,7 @@
                     <a onclick = "hidemenu()">&equiv; Menu</a>
                 </li>
                 <li>
-                    <a href="index.html" class="hidemenu">Home</a>
+                    <a href="index.html" class="hidemenu" id="current">Home</a>
                 </li>
                 <li>
                     <a href="order.html" class="hidemenu">Order</a>
@@ -33,18 +33,155 @@
     </header>
     </span>
 <main>
+    <div id="calltoaction">
+    &ast; Monthly subscriptions available! <br> Keep scrolling for more information. &ast; </div>
     <h1>About Little Miss Bowtique</h1>
 <article class="bio">
     <section id="s1">
-    <img src="images/bioprofile.jpg" alt="Megan and her daughter">
+    <img src="images/gallery12.jpg" alt="Megan and her daughter">
 </section>
 <section id="s2">
     <h3> First of all, thank you for coming to check us out!!</h3>
     Lorem ipsum, dolor sit amet consectetur <br>  adipisicing elit. Amet dolor cum, <br> voluptatibus hic et libero! <br>
     Neque, deserunt officiis, non vitae nobis, <br> adipisci ducimus quas obcaecati <br> illo repellat et eaque eos.
 </section>
-</article>
-<hr>
+</article> <br><br><br>
+<hr> <br><br><br>
+<section id="subscription">
+<h2 id="subscriptionH">Would you like new bows or pig tails sent to your door each month?</h2> <br><br>
+Four new fabrics are introduced each month. <br> A montly subscription will get you a bow featuring each of the 
+<br> four new fabrics for $13 and that *includes* shipping. <br> This gets you 35% off if you bought them separately! <br> Instead of bows, you could also choose to get two pig tails each month for the same price as the bow subscription <br>
+<br> Enter your email down below to get onto our monthly subscription list. <br> Make sure to indicate whether you'd like the bow subscription or the pig tail subscription.
+We will send you an email <br> each month when it's time to pay for your subscription. <br> (Our venmo information is located on the orders tab) <br> 
+<br><br> 
+<form action="/monthlysubscription-submit" method="POST">
+    <article id="form">
+        <!-- <section> -->
+            <span>
+                <label for="fullName">Full Name: </label>
+                <input type="text" id="fullName" name="fullName" required placeholder="John Doe"
+                    pattern="[A-Za-z ]{5,32}">
+            </span> <br><br>
+            <span>
+                <label for="email">Email: </label>
+                <input type="email" id="email" name="email" required placeholder="email@domain.com">
+            </span> <br><br>
+            <span>
+                <label for="phoneNumber">Phone number: </label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="2085550125">
+            </span> <br><br>
+            <span>
+                <label for="shipping"> Street address: </label>
+                <input type="text" id="shipping" name="street" required>
+            </span> <br><br>
+            <span>
+                <label for="shipping"> City: </label>
+                <input type="text" id="shipping" name="city" required>
+            </span> <br><br>
+            <span>
+                <label for="shipping"> State: </label>
+                <select name="state">
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="DC">District Of Columbia</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+                </select>
+            </span> <br><br>
+            <span>
+                <label for="shipping"> Zipcode: </label>
+                <input type="tel" id="shipping" name="zipcode" required>
+            </span> 
+            <br><br><br>
+            <span>
+                <label for="typeSubscription">Which subscription?<br> </label>
+                <br>
+                <input type="radio" id="pigtails" name="products" value="pigtails">
+                <label for="pigtails"> Pig tails </label>
+                <input type="radio" id="bows" name="products" value="bows">
+                <label for="bows"> Bow </label>
+                <input type="radio" id="both" name="products" value="both">
+                <label for="both">Both</label>
+            </span> <br>
+            <span>
+                If you chose bow, choose from the following options:
+                (if you chose pigtails just skip this section) <br><br>
+                What size? 
+                <label for="thick">
+                    <input type="radio" value="thick" name="bowSize" id="thick">
+                    Thick
+                </label>
+                <label for="skinny">
+                    <input type="radio" value="skinny" name="bowSize" id="skinny">
+                    Skinny
+                </label> <br><br>
+                What type?
+                <label for="nylonheadband">
+                    <input type="radio" value="nylonheadband" name="bowType" id="nylonheadband">
+                    Nylon Head Band
+                </label>
+                <label for="aligatorclip">
+                    <input type="radio" value="aligatorclip" name="bowType" id="aligatorclip">
+                    Aligator Clip
+                </label>
+            </span> <br>
+            <span> 
+                <label for="additionalComments">Type any additional comments here:</label> <br>
+                <textarea name="additionalComments" id="additionalComments" cols="30" rows="3"></textarea>
+            </span><br>
+            <span>
+                <input type="submit" value="Submit">
+                <input type="reset" value="Clear">
+            </span> <br>
+</form>
+</section>
+<br><br>
 <span id="table">
 <table>
     <thead>

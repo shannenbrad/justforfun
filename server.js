@@ -49,8 +49,6 @@ app.post('/order-submit', (req, res) => {
   req.body.topknotSize = req.body.topknotSize || "";
   req.body.topknotPrint = req.body.topknotPrint || "";
 
-  
-
   console.log(req.body);
   const sql = "insert into orders values (DEFAULT, ${fullName}, ${email}, ${phoneNumber}, ${street}, ${city}, ${state}, ${zipcode}, ${type1qty}, ${type2qty},${bowPrint}, ${bowSize}, ${bowType}, ${topknotPrint},${topknotSize},${additionalComments}, 'NEW');"
   db.none(sql, req.body)
@@ -61,8 +59,30 @@ app.post('/order-submit', (req, res) => {
     .catch(err => console.log(err));
 })
 
+app.post('/monthlysubscription-submit', (req, res) => {
+  req.body.bowSize = req.body.bowSize || "";
+  req.body.bowType = req.body.bowType || "";
+
+  console.log(req.body);
+  //phonenumber, 
+  const sql = "insert into monthlysubscription values (DEFAULT, ${fullName}, ${email}, ${phoneNumber}, ${street}, ${city}, ${state}, ${zipcode}, ${products}, ${bowType}, ${bowSize}, ${additionalComments}, 'NEW');"
+  db.none(sql, req.body)
+    .then(async () => {
+      await notifyManagerOfInvoiceShipped(req.body.fullName, req.body.type1, req.body.type2);
+      res.redirect('./subscriptionsubmitted.html')
+    })
+    .catch(err => console.log(err));
+})
+
 app.get('/get-orders', (req, res) => {
   const sql = "select * from orders";
+  db.any(sql)
+    .then((data) => res.send(data));
+  // res.end();
+})
+
+app.get('/get-subscriptions', (req, res) => {
+  const sql = "select * from monthlysubscription";
   db.any(sql)
     .then((data) => res.send(data));
   // res.end();
@@ -121,6 +141,23 @@ app.get('/get-image/:image_id', (req, res) => {
 
 app.get('/get-images')
 
+app.post('/complete-subscription', (req, res) => {
+  console.log('completing')
+  console.log(req.body);
+  const sql = "update monthlysubscription set status = 'COMPLETE' where monthly_id = ${monthly_id}";
+  db.any(sql, req.body)
+    .then(() => res.status(200).end())
+    .catch((err) => console.log(err))
+})
+
+app.post('/newmonth-subscription', (req, res) => {
+  console.log('')
+  console.log(req.body);
+  const sql = "update monthlysubscription set status = 'NEW' where monthly_id = ${monthly_id}";
+  db.any(sql, req.body)
+    .then(() => res.status(200).end())
+    .catch((err) => console.log(err))
+})
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
 
 async function notifyManagerOfInvoiceShipped(fullName, type1qty, type2qty) {
@@ -147,11 +184,11 @@ async function notifyManagerOfInvoiceShipped(fullName, type1qty, type2qty) {
   };
 
 
-  transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log('Email sent: ' + info.response);
-    }
-  });
+  // transporter.sendMail(mailOptions, function (error, info) {
+  //   if (error) {
+  //     console.log(error);
+  //   } else {
+  //     console.log('Email sent: ' + info.response);
+  //   }
+  // });
 }

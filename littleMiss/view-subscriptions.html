@@ -4,25 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/small.css">
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@600&family=Montez&display=swap" rel="stylesheet">
-    <title>View Orders</title>
+    <link rel="stylesheet" type="text/css" href="/css/small.css">
+    <title>View Subscriptions</title>
 </head>
 
 <body>
     <span id="heading">
         <header>
-            <nav class="portalnav">
+            <nav>
                 <ul>
                     <li><img src="images/logo.jpg" alt="Little Miss"></li>
                     <li>
-                        <a href="admin.html">Portal</a>
+                        <a href="admin.html" id="portalbutton">Portal</a>
                     </li>
                     <li>
                         <a href="view-orders.html">Orders</a>
                     </li>
                     <li>
-                        <a href="view-subscriptions.html">Subscriptions</a>
+                        <a href="view-orders.html">Subscriptions</a>
             </nav>
         </header>
     </span>
@@ -30,18 +30,11 @@
         <table id="orders-table">
             <tr>
                 <th>Name</th>
-                <th>
-                    Email
-                </th>
+                <th>Email</th>
                 <th>Address</th>
                 <th>Phone Number</th>
-                <th>Topknot Quantity</th>
-                <th>Topknot Print</th>
-                <th>Topknot Size</th>
-                <th>Bow Quantity</th>
-                <th>Bow Print</th>
-                <th>Bow Size</th>
-                <th>Bow Type</th>
+                <th>Type of subscription</th>
+                <th>Bow preference</th>
                 <th>Customer's Comments</th>
                 <th>Order Status</th>
             </tr>
@@ -56,6 +49,6 @@
     </footer>
 </body>
 <script src="script/main.js"></script>
-<script src="script/loadOrders.js"></script>
+<script src="script/loadSubscriptions.js"></script>
 
 </html>

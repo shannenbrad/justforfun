@@ -20,6 +20,20 @@ body main {
     text-align: center;
     font-family: 'Dosis', sans-serif;
 }
+#calltoaction {
+    margin-top: 1em;
+    border: 4px double #0a0903;
+    background-color: #CEEBBF;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+}
+#current {
+    background-color: #F3F9D2;
+    width: 50px;
+    justify-content: center;
+}
 div h5 {
     background-color:  #F3F9D2;
     padding: 1em;
@@ -66,10 +80,12 @@ hr {
 .hidemenu {
     display: none;  
 }
-.inventory {
+ .inventory {
     display: grid;
     grid-template-columns: 1fr;
     margin-top: 2em;
+    margin-left: auto;
+    margin-right: auto;
 }
 .inventory div {
     margin: 0.5em;
@@ -81,6 +97,9 @@ hr {
 }
 .inventory div:hover {
     box-shadow: #CEEBBF 15px 15px 20px;
+}
+body main section #monthlyInput {
+    text-align: center;
 }
 main img {
     margin: 0.5em;
@@ -97,6 +116,7 @@ li a {
 }
 #reviews {
     margin-top: 2em;
+    border: #CEEBBF double 4px ;
 }
 .reviewsgallery {
     display: grid;
@@ -111,6 +131,18 @@ li a {
 section img{
     width: 200px;
 }
+#subscription {
+    border: 4px double black;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+    width: 250px;
+    text-align: left;
+}
+#subscriptionH {
+    font-weight: bolder;
+    font-size: 24pt;
+}
 table {
     justify-content: center;
     border: 2px solid #0a0903;
@@ -122,7 +154,19 @@ table {
     margin-left: auto;
     margin-right: auto;
 }
-
+#thanks {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+#order {
+    border: #CEEBBF double 4px;
+    width: max-content;
+    padding: 2em;
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+}
 #orders-table td {
     border: 1px solid black;
     padding: 0.5em;
@@ -134,6 +178,9 @@ table {
       padding: 0.5em;
       font-size: 16pt;
   }
+body span header nav .portalnav {
+    padding-top: 4em;
+}
 ul {
     list-style-type: none;
     display: flex;
@@ -148,7 +195,9 @@ ul {
     header img {
         width: 150px;
     }
-
+    #current {
+        width: 80px;
+    }
       table{
           margin-left:auto;
           margin-right: auto;
@@ -157,14 +206,18 @@ ul {
         text-align: center;
         font-size: 14pt;
     }
+    #Gallery {
+        border: #CEEBBF double 4px ;
+        margin-top: 2em;
+    }
     #hamburger {
         display: none;
     }
     #heading a {
-        margin-left: 78%;
+        margin-left: 18%;
     }
     header nav img {
-        margin-left: -12em;
+        margin-left: -4em;
     }
     .hidemenu {
         display: block;
@@ -178,9 +231,6 @@ ul {
     }
     body .inventory div img {
         width: 200px;
-    }
-    .inventory {
-        grid-template-columns: 1fr 1fr;
     }
     .reviewsgallery {
         grid-template-columns: 1fr 1fr;
@@ -196,5 +246,35 @@ article #s2 {
         flex-direction: row;
     justify-content: space-evenly;
     }
+    #reviews {
+        width: 300px;
+    }
+    #subscription {
+        width: 400px;
+    }
 }
-
+@media only screen and (min-width: 62.5em) { 
+    #current {
+        width: 130px;
+    }
+    body main .inventory {
+        grid-template-columns: 1fr 1fr;
+    }
+    #Gallery {
+        width: 700px;
+        margin-top: 2em;
+    }
+    #heading a {
+        margin-left: 78%;
+    }
+    header nav img {
+        margin-left: -12em;
+    }
+    #order {
+        width: 800px
+    }
+    #reviews {
+        width: 500px;
+        padding: 1em;
+    }
+}
