@@ -1,0 +1,6 @@
+create table if not exists images (
+image_id SERIAL PRIMARY KEY,
+description VARCHAR(100) NOT NULL,
+data bytea NOT NULL,
+active boolean DEFAULT 't'
+);

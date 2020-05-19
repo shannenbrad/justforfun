@@ -2,6 +2,8 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 8080;
 const pgp = require('pg-promise')();
+const formidable = require('formidable');
+const fs = require('fs');
 
 const nodemailer = require('nodemailer');
 
@@ -74,6 +76,50 @@ app.post('/complete-order', (req, res) => {
     .then(() => res.status(200).end())
     .catch((err) => console.log(err))
 })
+
+app.post('/image-submit', (req, res) => {
+
+  const form = formidable({ multiples: true });
+
+  form.parse(req, (err, fields, files) => {
+      if (err) {
+          res.status(500).end();
+          return;
+      }
+      fs.readFile(files.data.path, (err, data) => {
+          if (err) res.status(500).end();
+          const sql = 'insert into images values (DEFAULT, ${description}, ${data})';
+          db.none(sql, { description: fields.description, data: data })
+              .then(async () => {
+                  res.status(200).end();
+              })
+              .catch(err => console.log(err));
+      })
+  });
+})
+
+app.get('/get-images', (req, res) => {
+  const sql = "select image_id, description from images where active";
+  db.any(sql)
+  .then((data) => {
+      res.contentType('image/jpeg');
+      res.end(data[0].data);
+      
+  })
+})
+
+app.get('/get-image/:image_id', (req, res) => {
+  console.log(req.params);
+  const sql = "select data from images where image_id = ${image_id}";
+  db.oneOrNone(sql, req.params)
+  .then((data) => {
+      res.contentType('image/jpeg');
+      res.end(data[0].data);
+      
+  })
+})
+
+app.get('/get-images')
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
 
